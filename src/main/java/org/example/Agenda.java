@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * @author jcarlos
- * @version 1.0  02/25/25
+ * @version 1.0  02/25/2025
  */
 public class Agenda implements I_Agenda {
     private List<Persona> contacts; // Lista de Persona
