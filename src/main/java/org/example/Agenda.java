@@ -8,7 +8,7 @@ import java.util.List;
  * @author jcarlos
  * @version 1.0  02/25/25
  */
-public class Agenda {
+public class Agenda implements I_Agenda {
     private List<Persona> contacts; // Lista de Persona
 
     /**
@@ -24,6 +24,7 @@ public class Agenda {
      * @param phone Telefono del nuevo contacto
      * Si el contacto no existe, se crea el nuevo contacto en la lista de contactos
      */
+    @Override
     public void addContact(String name, String phone) {
         boolean exists = false;
         for (Persona c : contacts) {
@@ -45,6 +46,7 @@ public class Agenda {
      * @param name Nombre del contacto a eliminar
      * Si el contqacto existe, es eliminado
      */
+    @Override
     public void removeContact(String name) {
         Iterator<Persona> it = contacts.iterator();
 
@@ -64,6 +66,7 @@ public class Agenda {
      * @param newPhone Numero de telefono nuevo
      * Modificacion de numeros de telefono desactualizados
      */
+    @Override
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
         for (Persona c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
@@ -82,6 +85,7 @@ public class Agenda {
      *
      * @return La lista de contactos
      */
+    @Override
     public List<Persona> getContacts() {
         return this.contacts;
     }
