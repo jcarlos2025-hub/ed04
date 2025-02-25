@@ -7,7 +7,7 @@ import java.util.List;
  * @author jcarlos
  * @version 1.0  02/25/25
  */
-public class Contacto {
+public class Persona {
     private String name;
     private List<String> phones;
 
@@ -17,10 +17,10 @@ public class Contacto {
      * @param phone Telefono del contacto
      * Creacion de un nuevo contacto
      */
-    public Contacto(String name, String phone) {
-        this.name = name;
-        this.phones = new ArrayList<>();
-        this.phones.add(phone);
+    public Persona(String name, String phone) {
+        this.setName(name);
+        this.setPhones(new ArrayList<>());
+        this.getPhones().add(phone);
     }
 
     /**
@@ -37,5 +37,13 @@ public class Contacto {
      */
     public List<String> getPhones() {
         return this.phones;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhones(List<String> phones) {
+        this.phones = phones;
     }
 }
