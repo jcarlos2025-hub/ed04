@@ -6,7 +6,7 @@ package org.example;
  */
 public class Main {
     public static void main(String[] args) {
-        // Crear una nueva agenda.
+        // Crear una nueva agenda con un metodo refactorizado.
         Agenda agendaContactos = getAgenda();
 
         // Imprimir todos los contactos de la agenda.
