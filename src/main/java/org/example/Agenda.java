@@ -4,13 +4,26 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @author jcarlos
+ * @version 1.0  02/25/25
+ */
 public class Agenda {
     private List<Contacto> contacts; // Lista de Contacto
 
+    /**
+     * Creacion de objeto Agenda, un array
+     */
     public Agenda() {
         this.contacts = new ArrayList<>();
     }
 
+    /**
+     *
+     * @param name Nombre del nuevo contacto
+     * @param phone Telefono del nuevo contacto
+     * Si el contacto no existe, se crea el nuevo contacto en la lista de contactos
+     */
     public void addContact(String name, String phone) {
         boolean exists = false;
         for (Contacto c : contacts) {
@@ -27,6 +40,11 @@ public class Agenda {
         }
     }
 
+    /**
+     *
+     * @param name Nombre del contacto a eliminar
+     * Si el contqacto existe, es eliminado
+     */
     public void removeContact(String name) {
         Iterator<Contacto> it = contacts.iterator();
 
@@ -39,6 +57,13 @@ public class Agenda {
         }
     }
 
+    /**
+     *
+     * @param name Nombre del contacto
+     * @param oldPhone Numero de telefono antiguo
+     * @param newPhone Numero de telefono nuevo
+     * Modificacion de numeros de telefono desactualizados
+     */
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
         for (Contacto c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
@@ -53,6 +78,10 @@ public class Agenda {
         }
     }
 
+    /**
+     *
+     * @return La lista de contactos
+     */
     public List<Contacto> getContacts() {
         return this.contacts;
     }
